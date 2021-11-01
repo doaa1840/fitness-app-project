@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onboarding_screen/meal.dart';
 
 class loginPage extends StatelessWidget {
   @override
@@ -71,7 +72,12 @@ class loginPage extends StatelessWidget {
                     child: MaterialButton(
                       minWidth: double.infinity,
                       height: 60,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyHomePage()));
+                      },
                       color: Color(0xff689f38),
                       elevation: 0,
                       shape: RoundedRectangleBorder(
@@ -106,7 +112,8 @@ class loginPage extends StatelessWidget {
                   height: 200,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(""), fit: BoxFit.fitHeight),
+                        image: AssetImage("lib/resources/back.png"),
+                        fit: BoxFit.fitHeight),
                   ),
                 )
               ],

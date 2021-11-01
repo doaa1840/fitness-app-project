@@ -63,4 +63,11 @@ flutter:
   - lib/resources/slide-1.png
   - lib/resources/slide-2.png
   - lib/resources/slide-3.png
+  - lib/resources/back.png
+  - lib/resources/img1.png
+  - lib/resources/img2.png
+  - lib/resources/img3.png
+  - lib/resources/img4.png
+  - lib/resources/img5.png
+
   
