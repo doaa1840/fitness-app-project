@@ -91,21 +91,29 @@ class RecipeCard extends StatelessWidget {
         SizedBox(
           height: 20,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Flexible(
-              flex: 2,
-              child: Column(
-                children: [
-                  Text(
-                    recipeModel.title,
+        Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      Text(
+                        recipeModel.title,
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            )
-          ],
-        )
+                ),
+                Flexible(
+                  flex: 1,
+                  child: Row(
+                    children: [],
+                  ),
+                ),
+              ],
+            ))
       ],
     );
   }
