@@ -103,7 +103,7 @@ class RecipeCard extends StatelessWidget {
                     children: [
                       Text(
                         recipeModel.title,
-                        style: Theme.of(context).textTheme.subtitle1,
+                        style: Theme.of(context).textTheme.headline6,
                       ),
                       SizedBox(
                         height: 8,
@@ -118,7 +118,12 @@ class RecipeCard extends StatelessWidget {
                 Flexible(
                   flex: 1,
                   child: Row(
-                    children: [],
+                    children: [
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Icon(Icons.timer),
+                    ],
                   ),
                 ),
               ],
