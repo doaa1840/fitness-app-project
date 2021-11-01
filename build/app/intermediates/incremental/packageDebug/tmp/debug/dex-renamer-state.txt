@@ -1,4 +1,4 @@
-#Mon Nov 01 20:15:07 EET 2021
+#Mon Nov 01 20:37:04 EET 2021
 base.0=C\:\\Users\\dzeda\\fitness-app-project\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
