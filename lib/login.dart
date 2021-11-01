@@ -35,7 +35,7 @@ class loginPage extends StatelessWidget {
                 Column(
                   children: <Widget>[
                     Text(
-                      "Login",
+                      "Login-edited now by ahmad",
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     ),
