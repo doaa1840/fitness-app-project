@@ -106,9 +106,7 @@ class loginPage extends StatelessWidget {
                   height: 200,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: NetworkImage(
-                            'https://koshelevfoto.ru/post/%D8%AA%D9%85%D8%A7%D8%B1%D9%8A%D9%86+%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A%D8%A9+%D9%83%D8%B1%D8%AA%D9%88%D9%86%D9%8A%D8%A9'),
-                        fit: BoxFit.fitHeight),
+                        image: AssetImage(""), fit: BoxFit.fitHeight),
                   ),
                 )
               ],
