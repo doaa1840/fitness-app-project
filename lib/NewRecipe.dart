@@ -50,6 +50,7 @@ class RecipeCard extends StatelessWidget {
   );
   @override
   bool saved = false;
+  bool loved = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -123,6 +124,16 @@ class RecipeCard extends StatelessWidget {
                         width: 20,
                       ),
                       Icon(Icons.timer),
+                      SizedBox(
+                        width: 4,
+                      ),
+                      Text(recipeModel.cookingTime.toString() + '\''),
+                      InkWell(
+                        child: Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                        ),
+                      )
                     ],
                   ),
                 ),
