@@ -74,22 +74,23 @@ class RecipeModel {
       ],
     ),
     RecipeModel(
-      title: 'Sheet Pan Sausage and Egg Breakfast Bake ',
+      title: 'Banana, oat and peanut butter smoothie ',
       writer: "Imran Sefat",
       description:
           'A hearty breakfast that easily feeds a family of four, all on one sheet pan? Yes, please.',
       cookingTime: 10,
       servings: 4,
       imgPath: 'lib/resources/img3.png',
-      preperation: [],
+      preperation: [
+        'This drink is great for breakfast or before a workout Mix all ingredients in a blender',
+      ],
       ingredients: [
-        '8 large eggs',
-        '1 tsp. Dijon mustard',
-        'Kosher salt and pepper',
-        '1 tbsp. olive oil or unsalted butter',
-        '2 slices thick-cut bacon, cooked and broken into pieces',
-        '2 c. spinach, torn',
-        '2 oz. Gruyère cheese, shredded',
+        'big banana',
+        '2 tablespoons instant oats',
+        'Half a cup of milk',
+        'Small spoonful of peanut butter',
+        'sprinkle cinnamon',
+        'Diet sugar or honey for sweetening',
       ],
     ),
     RecipeModel(
