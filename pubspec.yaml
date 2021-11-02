@@ -35,6 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   gradient_widgets: ^0.6.0
+  sliding_up_panel: ^2.0.0+1
 
   
 dev_dependencies:
@@ -69,5 +70,6 @@ flutter:
   - lib/resources/img3.png
   - lib/resources/img4.png
   - lib/resources/img5.png
+  - lib/resources/backk.png
 
   

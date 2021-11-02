@@ -13,6 +13,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white70,
       bottomNavigationBar: Container(
         // color: Colors.grey[300],
         height: 100,
@@ -21,17 +22,17 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Icon(
               Icons.home,
-              color: Colors.green,
+              color: Colors.black,
             ),
-            Icon(
+            /* Icon(
               Icons.people,
             ),
             Icon(
-              Icons.favorite,
+              Icons.orite,
             ),
             Icon(
               Icons.person,
-            ),
+            ),*/
           ],
         ),
       ),
@@ -83,6 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Center(
                         child: Text(
                           'Favourite Section',
+                          style: TextStyle(fontSize: 1, color: Colors.white),
                         ),
                       ),
                     ),
@@ -90,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Center(
                         child: Text(
                           'Cetegories',
+                          style: TextStyle(fontSize: 1, color: Colors.white),
                         ),
                       ),
                     ),

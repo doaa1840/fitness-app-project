@@ -1,12 +1,10 @@
-// ignore: file_names
-// ignore: file_names
-// ignore: file_names
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding_screen/RecipeModel.dart';
 import 'package:onboarding_screen/RecipeModel.dart';
+import 'package:onboarding_screen/RecipeDetails.dart';
 
 import 'RecipeModel.dart';
 
@@ -26,10 +24,19 @@ class NewRecipe extends StatelessWidget {
               itemCount: RecipeModel.demoRecipe.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                  child: RecipeCard(RecipeModel.demoRecipe[index]),
-                );
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12, vertical: 12),
+                    child: GestureDetector(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RecipDetail(
+                            recipeModel: RecipeModel.demoRecipe[index],
+                          ),
+                        ),
+                      ),
+                      child: RecipeCard(RecipeModel.demoRecipe[index]),
+                    ));
               },
             ),
             Container(
@@ -62,8 +69,8 @@ class RecipeCard extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(24),
                 child: Image(
-                  height: 320,
-                  width: 320,
+                  height: 200,
+                  width: 200,
                   fit: BoxFit.cover,
                   image: AssetImage(recipeModel.imgPath),
                 ),
@@ -74,7 +81,7 @@ class RecipeCard extends StatelessWidget {
               right: 40,
               child: InkWell(
                 onTap: () {
-                  /* setState*/ (() {
+                  setState(() {
                     saved = !saved;
                   });
                 },
@@ -129,9 +136,16 @@ class RecipeCard extends StatelessWidget {
                       ),
                       Text(recipeModel.cookingTime.toString() + '\''),
                       InkWell(
+                        onDoubleTap: () {
+                          color:
+                          Color(0xA32638);
+                          setState(() {
+                            loved = !loved;
+                          });
+                        },
                         child: Icon(
-                          Icons.favorite,
-                          color: Colors.red,
+                          Icons.food_bank_outlined,
+                          color: loved ? Colors.red : Colors.black,
                         ),
                       )
                     ],
@@ -142,4 +156,6 @@ class RecipeCard extends StatelessWidget {
       ],
     );
   }
+
+  void setState(Null Function() param0) {}
 }

@@ -23,6 +23,9 @@ class loginPage extends StatelessWidget {
         ),
       ),
       body: Container(
+        // decoration: BoxDecoration(
+        // image: DecorationImage(image: AssetImage('lib/resources/backk.png')),
+        // ),
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
         child: Column(
@@ -64,10 +67,10 @@ class loginPage extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         border: Border(
-                          bottom: BorderSide(color: Colors.black),
-                          top: BorderSide(color: Colors.black),
-                          left: BorderSide(color: Colors.black),
-                          right: BorderSide(color: Colors.black),
+                          bottom: BorderSide(color: Colors.black87),
+                          top: BorderSide(color: Colors.black87),
+                          left: BorderSide(color: Colors.black87),
+                          right: BorderSide(color: Colors.black87),
                         )),
                     child: MaterialButton(
                       minWidth: double.infinity,
