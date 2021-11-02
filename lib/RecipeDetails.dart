@@ -152,7 +152,7 @@ class RecipDetail extends StatelessWidget {
                               child: preperation(recipeModel: recipeModel),
                             ),
                             Container(
-                              child: Text("Tast very good 🥰🥰"),
+                              child: Text("Taste very good 🥰🥰"),
                             ),
                           ],
                         ),

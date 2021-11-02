@@ -22,7 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Icon(
               Icons.home,
-              color: Colors.black,
+              color: Colors.green,
             ),
             /* Icon(
               Icons.people,
