@@ -78,8 +78,8 @@ class RecipeModel {
       writer: "Imran Sefat",
       description:
           'A hearty breakfast that easily feeds a family of four, all on one sheet pan? Yes, please.',
-      cookingTime: 10,
-      servings: 4,
+      cookingTime: 15,
+      servings: 350,
       imgPath: 'lib/resources/img3.png',
       preperation: [
         'This drink is great for breakfast or before a workout Mix all ingredients in a blender',
