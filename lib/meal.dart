@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     text: "Healthy Recipes".toUpperCase(),
                   ),
                   Tab(
-                    text: "Favourites".toUpperCase(),
+                    text: "Fav".toUpperCase(),
                   ),
                   Tab(
                     text: "Categories".toUpperCase(),
