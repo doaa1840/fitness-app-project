@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 indicatorColor: Colors.black,
                 tabs: [
                   Tab(
-                    text: "Healthy Recipes".toUpperCase(),
+                    text: "Healthyyy Recipes".toUpperCase(),
                   ),
                   Tab(
                     text: "Fasshhv".toUpperCase(),
