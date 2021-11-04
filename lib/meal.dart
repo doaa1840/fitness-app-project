@@ -21,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Icon(
-              Icons.home,
+              Icons.food_bank_sharp,
               color: Colors.green,
             ),
             /* Icon(
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         bottom: false,
         child: DefaultTabController(
-          length: 3,
+          length: 2,
           initialIndex: 0,
           child: Column(
             children: [
@@ -51,10 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 indicatorColor: Colors.black,
                 tabs: [
                   Tab(
-                    text: "Healthpy Recipes".toUpperCase(),
-                  ),
-                  Tab(
-                    text: "Favourites".toUpperCase(),
+                    text: "Healthppy Recipes".toUpperCase(),
                   ),
                   Tab(
                     text: "Categories".toUpperCase(),
@@ -80,14 +77,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: TabBarView(
                   children: <Widget>[
                     NewRecipe(),
-                    Container(
-                      child: Center(
-                        child: Text(
-                          'Favourite Section',
-                          style: TextStyle(fontSize: 1, color: Colors.white),
-                        ),
-                      ),
-                    ),
                     Container(
                       child: Center(
                         child: Text(
