@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding_screen/NewRecipe.dart';
+import 'package:onboarding_screen/categores.dart';
+import 'package:onboarding_screen/categoryListPage.dart';
 
 import 'NewRecipe.dart';
 
@@ -13,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.white,
       bottomNavigationBar: Container(
         // color: Colors.grey[300],
         height: 100,
@@ -79,10 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     NewRecipe(),
                     Container(
                       child: Center(
-                        child: Text(
-                          'Cetegories',
-                          style: TextStyle(fontSize: 1, color: Colors.white),
-                        ),
+                        //
+                        child: categoryListPage(),
                       ),
                     ),
                   ],
