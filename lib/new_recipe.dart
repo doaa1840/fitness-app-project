@@ -2,11 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/RecipeModel.dart';
-import 'package:onboarding_screen/RecipeModel.dart';
-import 'package:onboarding_screen/RecipeDetails.dart';
+import 'package:onboarding_screen/recipe_model.dart';
+import 'package:onboarding_screen/recipe_details.dart';
 
-import 'RecipeModel.dart';
+import 'recipe_model.dart';
 
 class NewRecipe extends StatelessWidget {
   @override

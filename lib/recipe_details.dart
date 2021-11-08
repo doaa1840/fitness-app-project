@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/RecipeModel.dart';
+import 'package:onboarding_screen/recipe_model.dart';
 
 class RecipDetail extends StatelessWidget {
   final RecipeModel recipeModel;

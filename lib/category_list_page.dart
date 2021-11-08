@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/Utils.dart';
+import 'package:onboarding_screen/utils.dart';
 import 'package:onboarding_screen/categores.dart';
 
 class categoryListPage extends StatelessWidget {

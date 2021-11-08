@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/NewRecipe.dart';
+import 'package:onboarding_screen/new_recipe.dart';
 import 'package:onboarding_screen/categores.dart';
-import 'package:onboarding_screen/categoryListPage.dart';
+import 'package:onboarding_screen/category_list_page.dart';
 
-import 'NewRecipe.dart';
+import 'new_recipe.dart';
+import 'new_recipe.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -53,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 indicatorColor: Colors.black,
                 tabs: [
                   Tab(
-                    text: "Healthppy Recipes".toUpperCase(),
+                    text: "Healthy Recipes".toUpperCase(),
                   ),
                   Tab(
                     text: "Categories".toUpperCase(),
