@@ -12,7 +12,21 @@ class categoryListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // drawer: Drawer(),
-      // appBar: AppBar(),
+      appBar: AppBar(
+        elevation: 0,
+        brightness: Brightness.light,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios,
+            size: 20,
+            color: Colors.black,
+          ),
+        ),
+      ),
       body: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -49,6 +63,12 @@ class categoryListPage extends StatelessWidget {
                         child: Container(
                           height: 120,
                           decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.2),
+                                  offset: Offset.zero,
+                                )
+                              ],
                               borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(20),
                                   bottomRight: Radius.circular(20)),
@@ -63,25 +83,27 @@ class categoryListPage extends StatelessWidget {
                       ),
                       Positioned(
                           bottom: 0,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.food_bank_outlined,
-                                color: Colors.red,
-                                size: 30,
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                categores[index].name,
-                                style: TextStyle(
-                                  color: Colors.red,
-                                  fontSize: 25,
-                                ),
-                              )
-                            ],
-                          ))
+                          child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.food_bank_outlined,
+                                    color: Colors.red,
+                                    size: 30,
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                    categores[index].name,
+                                    style: TextStyle(
+                                      color: Colors.red,
+                                      fontSize: 25,
+                                    ),
+                                  )
+                                ],
+                              )))
                       //Image.asset(categores[index].imgPath),
                     ],
                   ),

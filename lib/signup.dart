@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onboarding_screen/homeEX.dart';
 
 class SignupPage extends StatelessWidget {
   @override
@@ -68,7 +69,10 @@ class SignupPage extends StatelessWidget {
                 child: MaterialButton(
                   minWidth: double.infinity,
                   height: 60,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => homeEX()));
+                  },
                   color: Color(0xff689f38),
                   elevation: 0,
                   shape: RoundedRectangleBorder(
