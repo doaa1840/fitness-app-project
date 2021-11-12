@@ -35,3 +35,39 @@ final exercises5 = [
       noOfReps: 12,
       videoUrl: 'lib/resources/west1.mp4'),
 ];
+final exercises6 = [
+  Exercise(
+      name: 'Arm Exercise',
+      duration: Duration(seconds: 30),
+      noOfReps: 12,
+      videoUrl: 'lib/resources/west1.mp4'),
+];
+final exercises7 = [
+  Exercise(
+      name: 'Arm Exercise',
+      duration: Duration(seconds: 30),
+      noOfReps: 12,
+      videoUrl: 'lib/resources/west1.mp4'),
+];
+
+final exercises8 = [
+  Exercise(
+      name: 'Arm Exercise',
+      duration: Duration(seconds: 30),
+      noOfReps: 12,
+      videoUrl: 'lib/resources/yoga.mp4'),
+];
+final exercises9 = [
+  Exercise(
+      name: 'Arm Exercise',
+      duration: Duration(seconds: 30),
+      noOfReps: 12,
+      videoUrl: 'lib/resources/yoga.mp4'),
+];
+final exercises10 = [
+  Exercise(
+      name: 'Arm Exercise',
+      duration: Duration(seconds: 30),
+      noOfReps: 12,
+      videoUrl: 'lib/resources/yoga.mp4'),
+];
