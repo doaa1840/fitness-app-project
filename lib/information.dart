@@ -11,7 +11,6 @@ class Test extends StatefulWidget {
 }
 
 class info extends State<Test> with SingleTickerProviderStateMixin {
-  TextEditingController username = new TextEditingController();
   var hight = "";
   var weight = "";
   var age = "";
@@ -23,6 +22,12 @@ class info extends State<Test> with SingleTickerProviderStateMixin {
   late num C;
   @override
   Widget build(BuildContext context) {
+    return new Scaffold(
+        body: new Container(
+            child: new Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [new Image.asset("lib/resources/backk.png")])));
+
     GlobalKey<FormState> formstate = new GlobalKey<FormState>();
 
     send() {
@@ -316,7 +321,7 @@ class info extends State<Test> with SingleTickerProviderStateMixin {
                   if (text!.contains(RegExp(r'[A-Z]'))) {
                     return msg1;
                   }
-                  if (text!.contains(RegExp(r'[a-z]'))) {
+                  if (text.contains(RegExp(r'[a-z]'))) {
                     return "the input should be number";
                   }
                   return null;
@@ -335,7 +340,7 @@ class info extends State<Test> with SingleTickerProviderStateMixin {
                   if (text!.contains(RegExp(r'[A-Z]'))) {
                     return "the input should be number";
                   }
-                  if (text!.contains(RegExp(r'[a-z]'))) {
+                  if (text.contains(RegExp(r'[a-z]'))) {
                     return "the input should be number";
                   }
                   return null;

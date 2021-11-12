@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/homeEX.dart';
+import 'package:onboarding_screen/login.dart';
+
+//import 'model/home_page.dart';
+import 'package:onboarding_screen/page/home_page.dart';
 
 class SignupPage extends StatelessWidget {
   @override
@@ -32,28 +35,56 @@ class SignupPage extends StatelessWidget {
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  Text(
-                    "Sign up",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                  Container(
+                    padding: EdgeInsets.only(top: 100),
+                    height: 200,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("lib/resources/signup.png"),
+                          fit: BoxFit.fitHeight),
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    "Create an account, It's free ",
-                    style: TextStyle(fontSize: 15, color: Colors.grey),
-                  )
                 ],
               ),
               Column(
                 children: <Widget>[
-                  inputFile(label: "Username"),
-                  inputFile(label: "Email"),
-                  inputFile(label: "Password", obscureText: true),
-                  inputFile(label: "Confirm Password ", obscureText: true),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.person),
+                      hintText: "username",
+                      border:
+                          OutlineInputBorder(borderSide: BorderSide(width: 1)),
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.email),
+                      hintText: "Email",
+                      border:
+                          OutlineInputBorder(borderSide: BorderSide(width: 1)),
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.lock),
+                      hintText: "password",
+                      border:
+                          OutlineInputBorder(borderSide: BorderSide(width: 1)),
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.lock),
+                      hintText: "Confirm password",
+                      border:
+                          OutlineInputBorder(borderSide: BorderSide(width: 1)),
+                    ),
+                  ),
                 ],
               ),
               Container(
@@ -71,7 +102,7 @@ class SignupPage extends StatelessWidget {
                   height: 60,
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => homeEX()));
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   color: Color(0xff689f38),
                   elevation: 0,
@@ -92,9 +123,15 @@ class SignupPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text("Already have an account?"),
-                  Text(
-                    " Login",
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => loginPage()));
+                    },
+                    child: Text(
+                      "Login",
+                      style: TextStyle(color: Colors.green),
+                    ),
                   )
                 ],
               )
@@ -104,34 +141,4 @@ class SignupPage extends StatelessWidget {
       ),
     );
   }
-}
-
-// we will be creating a widget for text field
-Widget inputFile({label, obscureText = false}) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      Text(
-        label,
-        style: TextStyle(
-            fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black87),
-      ),
-      SizedBox(
-        height: 5,
-      ),
-      TextField(
-        obscureText: obscureText,
-        decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey),
-            ),
-            border:
-                OutlineInputBorder(borderSide: BorderSide(color: Colors.grey))),
-      ),
-      SizedBox(
-        height: 10,
-      )
-    ],
-  );
 }
