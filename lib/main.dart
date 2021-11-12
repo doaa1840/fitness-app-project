@@ -12,8 +12,8 @@ class BoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: //BoardingPage(),
-          Test(),
+      home: BoardingPage(),
+      // Test(),
     );
   }
 }

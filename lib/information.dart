@@ -22,12 +22,6 @@ class info extends State<Test> with SingleTickerProviderStateMixin {
   late num C;
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        body: new Container(
-            child: new Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [new Image.asset("lib/resources/backk.png")])));
-
     GlobalKey<FormState> formstate = new GlobalKey<FormState>();
 
     send() {
