@@ -306,7 +306,6 @@ class info extends State<Test> with SingleTickerProviderStateMixin {
                   textAlign: TextAlign.left),
             ),
             TextFormField(
-                autofocus: true,
                 scrollPadding: EdgeInsets.all(20),
                 onSaved: (text) {
                   hight = text!;
