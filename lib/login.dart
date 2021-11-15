@@ -105,8 +105,8 @@ class loginPage extends StatelessWidget {
                         onPressed: () {
                           var formdata = formstate.currentState;
                           formdata!.save();
-                          print("email:$user_name");
-                          print("password:$password");
+                          print("User Name :$user_name");
+                          print("Password:$password");
                           Navigator.push(
                               context,
                               MaterialPageRoute(
