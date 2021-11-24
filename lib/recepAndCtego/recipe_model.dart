@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
 class RecipeModel {
-  String title, writer, description;
+  String title, writer;
   int cookingTime;
-  int servings;
+  int calories;
   List<String> ingredients = [];
   List<String> preperation = [];
   String imgPath;
   RecipeModel({
     required this.title,
     required this.writer,
-    required this.description,
     required this.cookingTime,
-    required this.servings,
+    required this.calories,
     required this.imgPath,
     required this.ingredients,
     required this.preperation,
@@ -21,10 +20,8 @@ class RecipeModel {
     RecipeModel(
       title: 'Green Salad',
       writer: "BreakFast",
-      description:
-          'A touch of lemon juice, fresh lettuce, and a few greens make for a great taste and healthy meal, without much effort!',
       cookingTime: 10,
-      servings: 90,
+      calories: 90,
       preperation: [
         'After preparing the vegetable salad ingredients follow these steps Mix the cucumber, tomato, onion, pepper, radish, jicama, and lettuce together in a large bowlWhisk garlic, lemon juice, olive oil, pomegranate juice, salt, pepper, dill, basil, and water together in a small bowl.Add the ingredients for the small bowl (sauce) over the salad just before serving.'
       ],
@@ -51,9 +48,8 @@ class RecipeModel {
     RecipeModel(
       title: 'Avocado sandwich with eggs',
       writer: "Break Fast",
-      description: '',
       cookingTime: 20,
-      servings: 170,
+      calories: 170,
       imgPath: 'lib/resources/img2.png',
       preperation: [
         '1. Cut the baguette horizontally into two equal parts and grease the bottom with cream cheese.',
@@ -76,10 +72,8 @@ class RecipeModel {
     RecipeModel(
       title: 'Banana, oat and peanut butter smoothie ',
       writer: "BreakFast",
-      description:
-          'A hearty breakfast that easily feeds a family of four, all on one sheet pan? Yes, please.',
       cookingTime: 15,
-      servings: 350,
+      calories: 350,
       imgPath: 'lib/resources/img3.png',
       preperation: [
         'This drink is great for breakfast or before a workout Mix all ingredients in a blender',
@@ -96,10 +90,8 @@ class RecipeModel {
     RecipeModel(
       title: 'Blueberries with almonds and oats',
       writer: "BreakFast",
-      description:
-          'Just wait til you break this one out at the breakfast table: sweet tomatoes, runny yolks, and plenty of toasted bread for dipping.',
       cookingTime: 20,
-      servings: 270,
+      calories: 270,
       imgPath: 'lib/resources/img4.png',
       preperation: [
         'In a dish, put the blueberry, then add water to it so that it disintegrates and the snow melts, then set aside.',
@@ -117,10 +109,8 @@ class RecipeModel {
     RecipeModel(
       title: 'Pancack',
       writer: "BreackFast",
-      description:
-          'Just wait til you break this one out at the breakfast table: sweet tomatoes, runny yolks, and plenty of toasted bread for dipping.',
-      cookingTime: 40,
-      servings: 160,
+      cookingTime: 20,
+      calories: 160,
       imgPath: 'lib/resources/img5.png',
       preperation: [
         'In a medium bowl, place the yogurt, water, eggs, pumpkin, oil, and vanilla together. In another medium bowl, place the flour, brown sugar, sucralose, baking yeast, cinnamon, and salt together. Slowly add the wet ingredients to the dry ingredients and whisk until well combined. Heat a non-stick skillet over medium heat, and coat the pan with a little cooking oil spray. Pour ¼ cup of the mixture into the skillet. Cook the pancakes for about 2 minutes, or until bubbles appear on the top surface and the edges are slightly browned. Turn the pancakes over with a spatula, and cook for another 2 to 3 minutes. Repeat this process until you have used all of the pancake batter.',

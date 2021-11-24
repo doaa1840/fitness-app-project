@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/recipe_model.dart';
+import 'package:onboarding_screen/recepAndCtego/recipe_model_drink.dart';
 
 class RecipDetail extends StatelessWidget {
-  final RecipeModel recipeModel;
+  final RecipeModeldrink recipeModel;
   RecipDetail({
     required this.recipeModel,
   });
@@ -107,7 +107,7 @@ class RecipDetail extends StatelessWidget {
               ),
               Expanded(
                 child: DefaultTabController(
-                  length: 2,
+                  length: 3,
                   initialIndex: 0,
                   child: Column(
                     children: [
@@ -120,6 +120,9 @@ class RecipDetail extends StatelessWidget {
                           ),
                           Tab(
                             text: "Preparation".toUpperCase(),
+                          ),
+                          Tab(
+                            text: "Reviews".toUpperCase(),
                           ),
                         ],
                         labelColor: Colors.black,
@@ -147,6 +150,9 @@ class RecipDetail extends StatelessWidget {
                             Ingredients(recipeModel: recipeModel),
                             Container(
                               child: preperation(recipeModel: recipeModel),
+                            ),
+                            Container(
+                              child: Text("Taste very good 🥰🥰"),
                             ),
                           ],
                         ),
@@ -213,7 +219,7 @@ class Ingredients extends StatelessWidget {
     required this.recipeModel,
   }) : super(key: key);
 
-  final RecipeModel recipeModel;
+  final RecipeModeldrink recipeModel;
 
   @override
   Widget build(BuildContext context) {
@@ -251,7 +257,7 @@ class preperation extends StatelessWidget {
     required this.recipeModel,
   }) : super(key: key);
 
-  final RecipeModel recipeModel;
+  final RecipeModeldrink recipeModel;
 
   @override
   Widget build(BuildContext context) {

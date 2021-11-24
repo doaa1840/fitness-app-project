@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:onboarding_screen/recepAndCtego/Home_REC.dart';
 import 'package:onboarding_screen/recepAndCtego/new_recipe.dart';
-import 'package:onboarding_screen/recepAndCtego/category_list_page.dart';
-import 'package:onboarding_screen/recepAndCtego/categores.dart';
-import 'package:onboarding_screen/recepAndCtego/categoryList.dart';
+
 import 'new_recipe.dart';
 import 'new_recipe.dart';
 
@@ -16,6 +15,22 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        brightness: Brightness.light,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(
+            Icons.arrow_back_ios,
+            size: 20,
+            color: Colors.black,
+          ),
+        ),
+      ),
+
       backgroundColor: Colors.white,
       bottomNavigationBar: Container(
         // color: Colors.grey[300],
@@ -42,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         bottom: false,
         child: DefaultTabController(
-          length: 2,
+          length: 1,
           initialIndex: 0,
           child: Column(
             children: [
@@ -54,13 +69,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 indicatorColor: Colors.black,
                 tabs: [
                   Tab(
-                    text: "Healthy Recipes".toUpperCase(),
-                  ),
-                  Tab(
                     text: "Categories".toUpperCase(),
                   ),
                 ],
-                labelColor: Colors.green,
+                labelColor: Colors.brown,
                 /* indicator: dotIndicator(
                   color: Colors.black,
                   distanceFromCenter: 16,
@@ -79,11 +91,11 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 child: TabBarView(
                   children: <Widget>[
-                    NewRecipe(),
+                    //   NewRecipe(),
                     Container(
                       child: Center(
                         //
-                        child: categoryListPage(),
+                        child: Homecate(),
                       ),
                     ),
                   ],

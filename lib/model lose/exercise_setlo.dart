@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'exercise.dart';
+import 'exerciselo.dart';
 
-enum ExerciseType { build }
+enum ExerciseType { lose }
 
 String getExerciseName(ExerciseType type) {
   switch (type) {
-    case ExerciseType.build:
-      return 'Body Building ';
+    case ExerciseType.lose:
+      return 'Lose Wight ';
       break;
 
     default:
@@ -20,14 +20,14 @@ class ExerciseSet {
   final String name;
   final List<Exercise> exercises;
   final String imageUrl;
-  // final ExerciseType exerciseType;
+  final ExerciseType exerciseType;
   final Color color;
 
   const ExerciseSet({
     required this.name,
     required this.exercises,
     required this.imageUrl,
-    // required this.exerciseType,
+    required this.exerciseType,
     required this.color,
   });
 

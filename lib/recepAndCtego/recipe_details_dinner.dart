@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/recipe_model.dart';
+import 'package:onboarding_screen/recepAndCtego/recipe_model_dinner.dart';
 
 class RecipDetail extends StatelessWidget {
-  final RecipeModel recipeModel;
+  final RecipeModeldinner recipeModel;
   RecipDetail({
     required this.recipeModel,
   });
@@ -213,7 +213,7 @@ class Ingredients extends StatelessWidget {
     required this.recipeModel,
   }) : super(key: key);
 
-  final RecipeModel recipeModel;
+  final RecipeModeldinner recipeModel;
 
   @override
   Widget build(BuildContext context) {
@@ -251,7 +251,7 @@ class preperation extends StatelessWidget {
     required this.recipeModel,
   }) : super(key: key);
 
-  final RecipeModel recipeModel;
+  final RecipeModeldinner recipeModel;
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,4 @@
-import 'package:onboarding_screen/model/exercise.dart';
+import 'package:onboarding_screen/model lite/exerciseli.dart';
 import 'package:flutter/material.dart';
 //import 'package:onboarding_screen/model/exercise.dart';
 import 'package:video_player/video_player.dart';

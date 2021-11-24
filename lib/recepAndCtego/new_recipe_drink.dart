@@ -2,12 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/recipe_model.dart';
-import 'package:onboarding_screen/recepAndCtego/recipe_details.dart';
+import 'package:onboarding_screen/recepAndCtego/recipe_model_drink.dart';
+import 'package:onboarding_screen/recepAndCtego/recipe_details_drink.dart';
 
-import 'recipe_model.dart';
+import 'recipe_model_drink.dart';
 
-class NewRecipe extends StatelessWidget {
+class NewRecipedrink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +35,7 @@ class NewRecipe extends StatelessWidget {
             ListView.builder(
               physics: ScrollPhysics(),
               shrinkWrap: true,
-              itemCount: RecipeModel.demoRecipe.length,
+              itemCount: RecipeModeldrink.demoRecipe.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                     padding: const EdgeInsets.symmetric(
@@ -45,11 +45,11 @@ class NewRecipe extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => RecipDetail(
-                            recipeModel: RecipeModel.demoRecipe[index],
+                            recipeModel: RecipeModeldrink.demoRecipe[index],
                           ),
                         ),
                       ),
-                      child: RecipeCard(RecipeModel.demoRecipe[index]),
+                      child: RecipeCard(RecipeModeldrink.demoRecipe[index]),
                     ));
               },
             ),
@@ -65,7 +65,7 @@ class NewRecipe extends StatelessWidget {
 }
 
 class RecipeCard extends StatelessWidget {
-  final RecipeModel recipeModel;
+  final RecipeModeldrink recipeModel;
   RecipeCard(
     @required this.recipeModel,
   );
