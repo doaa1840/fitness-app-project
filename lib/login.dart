@@ -1,11 +1,35 @@
+import 'dart:convert';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:onboarding_screen/recepAndCtego/meal.dart';
 import 'package:onboarding_screen/signup.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'main_page.dart';
 
 class loginPage extends StatelessWidget {
   GlobalKey<FormState> formstate = new GlobalKey<FormState>();
   var user_name = "";
   var password = "";
+  var json_response = null;
+  send() async {
+    var num;
+
+    var s = Uri.parse("http://192.168.1.97:8000/login/$user_name/$password");
+    http.Response response1 = await http.get(s);
+    json_response = jsonDecode(response1.body);
+    if (json_response.isEmpty) {
+      num = 1;
+    } else {
+      json_response = json_response[0]["password"];
+
+      if (json_response != password) {
+      } else {}
+    }
+  }
+
   @override
   Widget build(BuildContext context) => GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
@@ -102,15 +126,27 @@ class loginPage extends StatelessWidget {
                       child: MaterialButton(
                         minWidth: double.infinity,
                         height: 60,
-                        onPressed: () {
+                        onPressed: () async {
                           var formdata = formstate.currentState;
                           formdata!.save();
-                          print("User Name :$user_name");
-                          print("Password:$password");
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MyHomePage()));
+                          var s = Uri.parse(
+                              "http://192.168.1.97:8000/login/$user_name/$password");
+                          http.Response response1 = await http.get(s);
+                          json_response = jsonDecode(response1.body);
+                          if (json_response.isEmpty) {
+                            showAlertDialog(context);
+                            print("hi");
+                          } else {
+                            json_response = json_response[0]["password"];
+                            if (json_response != password) {
+                              showAlertDialog(context);
+                            } else {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Profile()));
+                            }
+                          }
                         },
                         color: Color(0xff689f38),
                         elevation: 0,
@@ -161,4 +197,31 @@ class loginPage extends StatelessWidget {
           ),
         ),
       ));
+}
+
+showAlertDialog(BuildContext context) {
+  // Create button
+  Widget okButton = ElevatedButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.of(context).pop();
+    },
+  );
+
+  // Create AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("Wrong Login"),
+    content: Text("The username Or password is wrong"),
+    actions: [
+      okButton,
+    ],
+  );
+
+// show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }

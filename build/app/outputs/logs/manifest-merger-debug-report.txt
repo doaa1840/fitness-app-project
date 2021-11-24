@@ -5,7 +5,10 @@ INJECTED from D:\graduation project\fitness-app-project\android\app\src\main\And
 INJECTED from D:\graduation project\fitness-app-project\android\app\src\main\AndroidManifest.xml:1:1-41:12
 INJECTED from D:\graduation project\fitness-app-project\android\app\src\main\AndroidManifest.xml:1:1-41:12
 MERGED from D:\graduation project\fitness-app-project\android\app\src\main\AndroidManifest.xml:1:1-41:12
+MERGED from [:shared_preferences_android] D:\graduation project\fitness-app-project\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:video_player] D:\graduation project\fitness-app-project\build\video_player\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider_android] D:\graduation project\fitness-app-project\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:pedometer] D:\graduation project\fitness-app-project\build\pedometer\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] C:\Users\honey\.gradle\caches\transforms-2\files-2.1\b2ea5e05fb4fb851184e9b0af980bf49\jetified-exoplayer-hls-2.14.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.14.1] C:\Users\honey\.gradle\caches\transforms-2\files-2.1\f09b8ddd78b021f724ecbb270644c7ef\jetified-exoplayer-dash-2.14.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.14.1] C:\Users\honey\.gradle\caches\transforms-2\files-2.1\d9c8ace75a2893fac3be87cf34cd39b5\jetified-exoplayer-smoothstreaming-2.14.1\AndroidManifest.xml:17:1-24:12
@@ -100,8 +103,14 @@ uses-sdk
 INJECTED from D:\graduation project\fitness-app-project\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\graduation project\fitness-app-project\android\app\src\main\AndroidManifest.xml
 INJECTED from D:\graduation project\fitness-app-project\android\app\src\main\AndroidManifest.xml
+MERGED from [:shared_preferences_android] D:\graduation project\fitness-app-project\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences_android] D:\graduation project\fitness-app-project\build\shared_preferences_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:video_player] D:\graduation project\fitness-app-project\build\video_player\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:video_player] D:\graduation project\fitness-app-project\build\video_player\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] D:\graduation project\fitness-app-project\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] D:\graduation project\fitness-app-project\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:pedometer] D:\graduation project\fitness-app-project\build\pedometer\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:pedometer] D:\graduation project\fitness-app-project\build\pedometer\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] C:\Users\honey\.gradle\caches\transforms-2\files-2.1\b2ea5e05fb4fb851184e9b0af980bf49\jetified-exoplayer-hls-2.14.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] C:\Users\honey\.gradle\caches\transforms-2\files-2.1\b2ea5e05fb4fb851184e9b0af980bf49\jetified-exoplayer-hls-2.14.1\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.14.1] C:\Users\honey\.gradle\caches\transforms-2\files-2.1\f09b8ddd78b021f724ecbb270644c7ef\jetified-exoplayer-dash-2.14.1\AndroidManifest.xml:20:5-22:41

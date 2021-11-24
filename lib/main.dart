@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:onboarding_screen/information.dart';
+import 'package:onboarding_screen/page/home_page.dart';
 import 'package:onboarding_screen/scroll.dart';
+
+import 'main_page.dart';
 //import 'package:onboarding_screen/information.dart';
 
 void main() {
@@ -13,7 +16,7 @@ class BoardingScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BoardingPage(),
-      // Test(),
+      //Test(),
     );
   }
 }

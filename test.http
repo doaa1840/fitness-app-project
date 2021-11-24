@@ -1,0 +1,10 @@
+POST http://localhost:3000/signup HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_name":"ahmad",
+    "email":"ahmad.ssss@hotmail.com",
+    "password":"1234",
+    "confirm_password":"1234"
+}
+

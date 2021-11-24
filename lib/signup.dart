@@ -1,15 +1,34 @@
-import 'package:flutter/material.dart';
-import 'package:onboarding_screen/login.dart';
+import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:onboarding_screen/http.dart';
+import 'package:onboarding_screen/login.dart';
+import 'package:onboarding_screen/main_page.dart';
+import 'package:http/http.dart' as http;
 //import 'model/home_page.dart';
 import 'package:onboarding_screen/page/home_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return test();
+  }
+}
+
+class test extends State<SignupPage> {
   GlobalKey<FormState> formstate = new GlobalKey<FormState>();
   var user_name = "";
   var email = "";
   var password = "";
   var confirm_password = "";
+  var json_response = null;
+
+  send() async {
+    // var user_name = "";
+    // var email = "";
+    // var password = "";
+  }
 
   @override
   Widget build(BuildContext context) => GestureDetector(
@@ -121,18 +140,24 @@ class SignupPage extends StatelessWidget {
                       child: MaterialButton(
                         minWidth: double.infinity,
                         height: 60,
-                        onPressed: () {
+                        onPressed: () async {
                           var formdata = formstate.currentState;
                           formdata!.save();
-                          print("User Name:$user_name");
-                          print("Email:$email");
-                          print("Password:$password");
-                          print("Confirmed Password:$confirm_password");
-
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomePage()));
+                          var s = Uri.parse(
+                              "http://192.168.1.97:8000/searchUser/$user_name");
+                          http.Response response1 = await http.get(s);
+                          json_response = jsonDecode(response1.body);
+                          if (json_response.isEmpty) {
+                            var w = Uri.parse(
+                                "http://192.168.1.97:8000/create-user/$user_name/$email/$password");
+                            http.post(w);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Profile()));
+                          } else {
+                            showAlertDialog(context);
+                          }
                         },
                         color: Color(0xff689f38),
                         elevation: 0,
@@ -172,4 +197,31 @@ class SignupPage extends StatelessWidget {
               ),
             ),
           )));
+}
+
+showAlertDialog(BuildContext context) {
+  // Create button
+  Widget okButton = ElevatedButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.of(context).pop();
+    },
+  );
+
+  // Create AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("Wrong Login"),
+    content: Text("The username is Used/Try another"),
+    actions: [
+      okButton,
+    ],
+  );
+
+// show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
