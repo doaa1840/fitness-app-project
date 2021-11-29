@@ -3,9 +3,12 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
+import 'package:onboarding_screen/login.dart';
+
+var ip = "http://172.18.80.1:8000";
 
 class Test extends StatefulWidget {
-  Test({Key? key}) : super(key: key);
+  //Test({Key? key}) : super(key: key);
 
   @override
   info createState() => info();
@@ -21,8 +24,9 @@ class info extends State<Test> with SingleTickerProviderStateMixin {
   String activety = "";
   String msg1 = "the input is incorrect";
   String goal = "";
-  late num bmr;
+  var bmr;
   late num C;
+  var C_taken = 0;
   calcuate() {
     var formdata = formstate.currentState;
 
@@ -31,8 +35,7 @@ class info extends State<Test> with SingleTickerProviderStateMixin {
       var hight_asnum = int.parse(hight);
       var weight_asNum = int.parse(weight);
       var age_asNum = int.parse(age);
-      var bmr =
-          ((10 * weight_asNum) + (6.25 * hight_asnum) - (5 * age_asNum) + 5);
+      bmr = ((10 * weight_asNum) + (6.25 * hight_asnum) - (5 * age_asNum) + 5);
       print("bmr:$bmr");
       if (activety == "sedentary") {
         C = bmr * 1.2;
@@ -357,9 +360,13 @@ class info extends State<Test> with SingleTickerProviderStateMixin {
                     var formdata = formstate.currentState;
                     if (formdata!.validate()) {
                       formdata.save();
+                      calcuate();
+                      //print(check);
                       var w = Uri.parse(
-                          "http://192.168.1.97:8000/add_info/$hight/$weight/$age/$gender/$activety/$goal");
+                          "$ip/add_info/$check/$hight/$weight/$age/$gender/$activety/$goal/$bmr");
                       http.post(w);
+                      var z = Uri.parse("$ip/cal_counsume/$check/$C/$C_taken");
+                      http.post(z);
                       print("hiss");
                     } else
                       print("not valid");

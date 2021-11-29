@@ -7,7 +7,10 @@ import 'package:onboarding_screen/signup.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'information.dart';
 import 'main_page.dart';
+
+var check;
 
 class loginPage extends StatelessWidget {
   GlobalKey<FormState> formstate = new GlobalKey<FormState>();
@@ -17,7 +20,7 @@ class loginPage extends StatelessWidget {
   send() async {
     var num;
 
-    var s = Uri.parse("http://192.168.1.97:8000/login/$user_name/$password");
+    var s = Uri.parse("$ip/login/$user_name/$password");
     http.Response response1 = await http.get(s);
     json_response = jsonDecode(response1.body);
     if (json_response.isEmpty) {
@@ -127,24 +130,26 @@ class loginPage extends StatelessWidget {
                         minWidth: double.infinity,
                         height: 60,
                         onPressed: () async {
+                          var json_response_name;
                           var formdata = formstate.currentState;
                           formdata!.save();
-                          var s = Uri.parse(
-                              "http://192.168.1.97:8000/login/$user_name/$password");
+                          var s = Uri.parse("$ip/login/$user_name/$password");
                           http.Response response1 = await http.get(s);
                           json_response = jsonDecode(response1.body);
                           if (json_response.isEmpty) {
                             showAlertDialog(context);
                             print("hi");
                           } else {
+                            json_response_name = json_response[0]["user_name"];
                             json_response = json_response[0]["password"];
                             if (json_response != password) {
                               showAlertDialog(context);
                             } else {
+                              check = json_response_name;
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Profile()));
+                                      builder: (context) => Test()));
                             }
                           }
                         },

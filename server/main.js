@@ -28,15 +28,16 @@ app.post('/create-user/:user_name/:email/:password',(req,res)=>{
          }
      });
 })
-app.post('/add_info/:hight/:weight/:age/:gender/:activety/:goal',(req,res)=>{
-    let sql=`INSERT INTO information (hight,weight,age,gender,activaty,goal) VALUES ('${req.params.hight}','${req.params.weight}','${req.params.age}','${req.params.gender}','${req.params.activety}','${req.params.goal}')`;
+app.get('/add_info/:check/:hight/:weight/:age/:gender/:activety/:goal/:bmr',(req,res)=>{
+    let sql=`UPDATE users SET hight='${req.params.hight}',weight='${req.params.weight}',age='${req.params.age}',gender='${req.params.gender}',activaty='${req.params.activety}',goal='${req.params.goal}',bmr='${req.params.bmr}' WHERE user_name='${req.params.check}'`;
+    // let sql=`U INTO users (hight,weight,age,gender,activaty,goal) VALUES ('${req.params.hight}','${req.params.weight}','${req.params.age}','${req.params.gender}','${req.params.activety}','${req.params.goal}')`;
      db.query(sql,(err,data)=>{
          if(err) {
              return res.status(404).json({error:err});
          }
          else{
              res.send()
-            console.log("infosend");
+            console.log("hmmmm");
          }
      });
 })
@@ -64,6 +65,7 @@ app.get('/searchUser/:user_name',(req,res)=>{
         }
      });
 })
+
 app.listen('8000',()=>{
     console.log("serser is up on port 8000");
 });

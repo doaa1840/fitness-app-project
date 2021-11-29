@@ -1,7 +1,6 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/http.dart';
+import 'package:onboarding_screen/information.dart';
 import 'package:onboarding_screen/login.dart';
 import 'package:onboarding_screen/main_page.dart';
 import 'package:http/http.dart' as http;
@@ -23,12 +22,6 @@ class test extends State<SignupPage> {
   var password = "";
   var confirm_password = "";
   var json_response = null;
-
-  send() async {
-    // var user_name = "";
-    // var email = "";
-    // var password = "";
-  }
 
   @override
   Widget build(BuildContext context) => GestureDetector(
@@ -143,18 +136,35 @@ class test extends State<SignupPage> {
                         onPressed: () async {
                           var formdata = formstate.currentState;
                           formdata!.save();
-                          var s = Uri.parse(
-                              "http://192.168.1.97:8000/searchUser/$user_name");
+                          var s = Uri.parse("$ip/searchUser/$user_name");
                           http.Response response1 = await http.get(s);
                           json_response = jsonDecode(response1.body);
                           if (json_response.isEmpty) {
-                            var w = Uri.parse(
-                                "http://192.168.1.97:8000/create-user/$user_name/$email/$password");
-                            http.post(w);
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Profile()));
+                            if (confirm_password == password) {
+                              var w = Uri.parse(
+                                  "$ip/create-user/$user_name/$email/$password");
+                              http.post(w);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage()));
+                            } else {
+                              await showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                  title: Text("wrong confirmation"),
+                                  content: Text("confirm the password again"),
+                                  actions: <Widget>[
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Text("OK"),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            }
                           } else {
                             showAlertDialog(context);
                           }
@@ -210,7 +220,7 @@ showAlertDialog(BuildContext context) {
 
   // Create AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("Wrong Login"),
+    title: Text("Wrong SIGN UP"),
     content: Text("The username is Used/Try another"),
     actions: [
       okButton,
