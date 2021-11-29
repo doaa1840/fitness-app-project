@@ -28,6 +28,18 @@ app.post('/create-user/:user_name/:email/:password',(req,res)=>{
          }
      });
 })
+app.post('/cal_counsume/:check/:C/:C_taken',(req,res)=>{
+    let sql=`INSERT INTO calories (user_name,calories_needed,calories_taken) VALUES ('${req.params.check}','${req.params.C}','${req.params.C_taken}')`;
+     db.query(sql,(err,data)=>{
+         if(err) {
+             return res.status(404).json({error:err});
+         }
+         else{
+             res.send()
+            console.log("hi")
+         }
+     });
+})
 app.get('/add_info/:check/:hight/:weight/:age/:gender/:activety/:goal/:bmr',(req,res)=>{
     let sql=`UPDATE users SET hight='${req.params.hight}',weight='${req.params.weight}',age='${req.params.age}',gender='${req.params.gender}',activaty='${req.params.activety}',goal='${req.params.goal}',bmr='${req.params.bmr}' WHERE user_name='${req.params.check}'`;
     // let sql=`U INTO users (hight,weight,age,gender,activaty,goal) VALUES ('${req.params.hight}','${req.params.weight}','${req.params.age}','${req.params.gender}','${req.params.activety}','${req.params.goal}')`;
