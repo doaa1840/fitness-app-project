@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:onboarding_screen/login.dart';
 
-var ip = "http://172.18.80.1:8000";
+var ip = "http://192.168.1.77:8000";
 
 class Test extends StatefulWidget {
   //Test({Key? key}) : super(key: key);
@@ -364,7 +364,7 @@ class info extends State<Test> with SingleTickerProviderStateMixin {
                       //print(check);
                       var w = Uri.parse(
                           "$ip/add_info/$check/$hight/$weight/$age/$gender/$activety/$goal/$bmr");
-                      http.post(w);
+                      http.get(w);
                       var z = Uri.parse("$ip/cal_counsume/$check/$C/$C_taken");
                       http.post(z);
                       print("hiss");
