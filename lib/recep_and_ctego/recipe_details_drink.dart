@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/recipe_model_lunch.dart';
+import 'package:onboarding_screen/recep_and_ctego/recipe_model_drink.dart';
 
-class RecipDetail extends StatelessWidget {
-  final RecipeModellunch recipeModel;
-  RecipDetail({
+class recip_detail extends StatelessWidget {
+  final RecipeModeldrink recipeModel;
+  recip_detail({
     required this.recipeModel,
   });
 
@@ -147,7 +147,7 @@ class RecipDetail extends StatelessWidget {
                       Expanded(
                         child: TabBarView(
                           children: [
-                            Ingredients(recipeModel: recipeModel),
+                            ingredients(recipeModel: recipeModel),
                             Container(
                               child: preperation(recipeModel: recipeModel),
                             ),
@@ -213,13 +213,13 @@ class RecipDetail extends StatelessWidget {
   }
 }
 
-class Ingredients extends StatelessWidget {
-  const Ingredients({
+class ingredients extends StatelessWidget {
+  const ingredients({
     Key? key,
     required this.recipeModel,
   }) : super(key: key);
 
-  final RecipeModellunch recipeModel;
+  final RecipeModeldrink recipeModel;
 
   @override
   Widget build(BuildContext context) {
@@ -257,7 +257,7 @@ class preperation extends StatelessWidget {
     required this.recipeModel,
   }) : super(key: key);
 
-  final RecipeModellunch recipeModel;
+  final RecipeModeldrink recipeModel;
 
   @override
   Widget build(BuildContext context) {

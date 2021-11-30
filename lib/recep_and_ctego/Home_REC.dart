@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/new_recipe%20_lunch.dart';
-import 'package:onboarding_screen/recepAndCtego/new_recipe.dart';
-import 'package:onboarding_screen/recepAndCtego/new_recipe_%20dinner.dart';
-import 'package:onboarding_screen/recepAndCtego/new_recipe_drink.dart';
-import 'package:onboarding_screen/recepAndCtego/new_recipe_sweet.dart';
+import 'package:onboarding_screen/recep_and_ctego/new_recipe%20_lunch.dart';
+import 'package:onboarding_screen/recep_and_ctego/new_recipe.dart';
+import 'package:onboarding_screen/recep_and_ctego/new_recipe_%20dinner.dart';
+import 'package:onboarding_screen/recep_and_ctego/new_recipe_drink.dart';
+import 'package:onboarding_screen/recep_and_ctego/new_recipe_sweet.dart';
 
-class Homecate extends StatelessWidget {
+class home_cate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -67,7 +67,7 @@ class Homecate extends StatelessWidget {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => NewRecipe()));
+                                          builder: (context) => new_recipe()));
                                 },
                                 child: Text(
                                   "BreakFast",
@@ -94,7 +94,7 @@ class Homecate extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              NewRecipelunch()));
+                                              new_recipe_lunch()));
                                 },
                                 child: Text(
                                   "LUNCH",
@@ -121,7 +121,7 @@ class Homecate extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              NewRecipedinner()));
+                                              new_recipedinner()));
                                 },
                                 child: Text(
                                   "DINNER",
@@ -148,7 +148,7 @@ class Homecate extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              NewRecipedrink()));
+                                              new_recipedrink()));
                                 },
                                 child: Text(
                                   "DRENKS",
@@ -175,7 +175,7 @@ class Homecate extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              NewRecipesweet()));
+                                              new_recipesweet()));
                                 },
                                 child: Text(
                                   "Dessert",

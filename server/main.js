@@ -40,6 +40,18 @@ app.post('/cal_counsume/:check/:C/:C_taken',(req,res)=>{
          }
      });
 })
+app.get('/add/:check/:m',(req,res)=>{
+    let sql=`UPDATE calories SET calories_taken='${req.params.m}' WHERE user_name='${req.params.check}'`;
+     db.query(sql,(err,data)=>{
+         if(err) {
+             return res.status(404).json({error:err});
+         }
+         else{
+             res.send()
+            console.log("hi")
+         }
+     });
+})
 app.get('/add_info/:check/:hight/:weight/:age/:gender/:activety/:goal/:bmr',(req,res)=>{
     let sql=`UPDATE users SET hight='${req.params.hight}',weight='${req.params.weight}',age='${req.params.age}',gender='${req.params.gender}',activaty='${req.params.activety}',goal='${req.params.goal}',bmr='${req.params.bmr}' WHERE user_name='${req.params.check}'`;
     // let sql=`U INTO users (hight,weight,age,gender,activaty,goal) VALUES ('${req.params.hight}','${req.params.weight}','${req.params.age}','${req.params.gender}','${req.params.activety}','${req.params.goal}')`;
@@ -65,6 +77,18 @@ app.get('/Login/:user_name/:password',(req,res)=>{
         }
      });
 })
+app.get('/calories/:user_name',(req,res)=>{
+    let sql=`SELECT * FROM calories WHERE user_name='${req.params.user_name}'`;
+     db.query(sql,(err,data)=>{
+         if(err) {
+             return res.status(404).json({error:err});
+         }
+         else{
+             res.send(data);
+            console.log("1");
+        }
+     });
+})
 app.get('/searchUser/:user_name',(req,res)=>{
     let sql=`SELECT * FROM users WHERE user_name='${req.params.user_name}'`;
      db.query(sql,(err,data)=>{
@@ -81,3 +105,4 @@ app.get('/searchUser/:user_name',(req,res)=>{
 app.listen('8000',()=>{
     console.log("serser is up on port 8000");
 });
+

@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/recipe_model_sweet.dart';
+import 'package:onboarding_screen/recep_and_ctego/recipe_model_sweet.dart';
 
-class RecipDetail extends StatelessWidget {
+class recip_detail extends StatelessWidget {
   final RecipeModelsweet recipeModel;
-  RecipDetail({
+  recip_detail({
     required this.recipeModel,
   });
 

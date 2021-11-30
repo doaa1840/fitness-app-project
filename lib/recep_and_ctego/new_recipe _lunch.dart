@@ -2,12 +2,15 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/recipe_model.dart';
-import 'package:onboarding_screen/recepAndCtego/recipe_details.dart';
+import 'package:onboarding_screen/information.dart';
+import 'package:onboarding_screen/login.dart';
+import 'package:onboarding_screen/recep_and_ctego/recipe_model_lunch.dart';
+import 'package:onboarding_screen/recep_and_ctego/recipe_details_lunch.dart';
+import 'package:http/http.dart' as http;
+import 'recipe_model_lunch.dart';
+import 'dart:convert';
 
-import 'recipe_model.dart';
-
-class NewRecipe extends StatelessWidget {
+class new_recipe_lunch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +38,7 @@ class NewRecipe extends StatelessWidget {
             ListView.builder(
               physics: ScrollPhysics(),
               shrinkWrap: true,
-              itemCount: RecipeModel.demoRecipe.length,
+              itemCount: RecipeModellunch.demoRecipe.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                     padding: const EdgeInsets.symmetric(
@@ -44,12 +47,12 @@ class NewRecipe extends StatelessWidget {
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => RecipDetail(
-                            recipeModel: RecipeModel.demoRecipe[index],
+                          builder: (context) => recip_detail(
+                            recipeModel: RecipeModellunch.demoRecipe[index],
                           ),
                         ),
                       ),
-                      child: RecipeCard(RecipeModel.demoRecipe[index]),
+                      child: recipe_card(RecipeModellunch.demoRecipe[index]),
                     ));
               },
             ),
@@ -64,9 +67,10 @@ class NewRecipe extends StatelessWidget {
   }
 }
 
-class RecipeCard extends StatelessWidget {
-  final RecipeModel recipeModel;
-  RecipeCard(
+class recipe_card extends StatelessWidget {
+  var json_response = null;
+  final RecipeModellunch recipeModel;
+  recipe_card(
     @required this.recipeModel,
   );
   @override
@@ -94,7 +98,17 @@ class RecipeCard extends StatelessWidget {
               top: 20,
               right: 40,
               child: InkWell(
-                onTap: () {
+                onTap: () async {
+                  var calore;
+                  var i = recipeModel.calories;
+                  var h = Uri.parse("$ip/calories/$check");
+                  http.Response response1 = await http.get(h);
+                  json_response = jsonDecode(response1.body);
+                  calore = json_response[0]["calories_taken"];
+                  var m = i + calore;
+                  var z = Uri.parse("$ip/add/$check/$m");
+                  http.get(z);
+                  //print();
                   setState(() {
                     saved = !saved;
                   });

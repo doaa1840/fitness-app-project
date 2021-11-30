@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/Home_REC.dart';
-import 'package:onboarding_screen/recepAndCtego/new_recipe.dart';
+import 'package:onboarding_screen/recep_and_ctego/home_rec.dart';
+import 'package:onboarding_screen/recep_and_ctego/new_recipe.dart';
 
 import 'new_recipe.dart';
 import 'new_recipe.dart';
 
-class MyHomePage extends StatefulWidget {
+class my_home_page extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _my_home_pageState createState() => _my_home_pageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _my_home_pageState extends State<my_home_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Container(
                       child: Center(
                         //
-                        child: Homecate(),
+                        child: home_cate(),
                       ),
                     ),
                   ],

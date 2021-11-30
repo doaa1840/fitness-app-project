@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/meal.dart';
+import 'package:onboarding_screen/recep_and_ctego/meal.dart';
 import 'package:onboarding_screen/signup.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'information.dart';
 import 'main_page.dart';
 
-var check;
+var check = "assi2";
 
 class loginPage extends StatelessWidget {
   GlobalKey<FormState> formstate = new GlobalKey<FormState>();
@@ -145,7 +145,7 @@ class loginPage extends StatelessWidget {
                             if (json_response != password) {
                               showAlertDialog(context);
                             } else {
-                              check = json_response_name;
+                              // check = json_response_name;
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(

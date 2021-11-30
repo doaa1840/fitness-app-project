@@ -2,11 +2,11 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/categores.dart';
-import 'package:onboarding_screen/recepAndCtego/categoryList.dart';
+import 'package:onboarding_screen/recep_and_ctego/categores.dart';
+import 'package:onboarding_screen/recep_and_ctego/categoryList.dart';
 
 class categoryListPage extends StatelessWidget {
-  List<Category> categores = Utils.getMockedcategores();
+  List<category> categores = utils.getMockedcategores();
 
   @override
   Widget build(BuildContext context) {

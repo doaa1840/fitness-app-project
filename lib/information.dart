@@ -372,8 +372,8 @@ class info extends State<Test> with SingleTickerProviderStateMixin {
                       print("not valid");
                   },
                   child: Text("confirm data")),
-              ElevatedButton(
-                  onPressed: calcuate, child: Text("calcuate calories")),
+              // ElevatedButton(
+              //     onPressed: calcuate, child: Text("calcuate calories")),
             ],
           ),
         ),

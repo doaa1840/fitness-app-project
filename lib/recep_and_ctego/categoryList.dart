@@ -1,34 +1,34 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/categores.dart';
-import 'package:onboarding_screen/recepAndCtego/categoryList.dart';
+import 'package:onboarding_screen/recep_and_ctego/categores.dart';
+import 'package:onboarding_screen/recep_and_ctego/categoryList.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 
-class Utils {
-  static List<Category> getMockedcategores() {
+class utils {
+  static List<category> getMockedcategores() {
     return [
-      Category(
+      category(
         name: 'BreakFast',
         imgPath: 'lib/resources/p.png',
         subCategories: [],
       ),
-      Category(
+      category(
         name: 'Lunch',
         imgPath: 'lib/resources/l.png',
         subCategories: [],
       ),
-      Category(
+      category(
         name: 'Dinner',
         imgPath: 'lib/resources/d.png',
         subCategories: [],
       ),
-      Category(
+      category(
         name: 'Drinks',
         imgPath: 'lib/resources/dr.png',
         subCategories: [],
       ),
-      Category(
+      category(
         name: 'Sweets',
         imgPath: 'lib/resources/s.png',
         subCategories: [],

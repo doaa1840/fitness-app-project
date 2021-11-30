@@ -2,12 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recepAndCtego/recipe_model_sweet.dart';
-import 'package:onboarding_screen/recepAndCtego/recipe_details_sweet.dart';
+import 'package:onboarding_screen/recep_and_ctego/recipe_model_drink.dart';
+import 'package:onboarding_screen/recep_and_ctego/recipe_details_drink.dart';
 
-import 'recipe_model_sweet.dart';
+import 'recipe_model_drink.dart';
 
-class NewRecipesweet extends StatelessWidget {
+class new_recipedrink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +35,7 @@ class NewRecipesweet extends StatelessWidget {
             ListView.builder(
               physics: ScrollPhysics(),
               shrinkWrap: true,
-              itemCount: RecipeModelsweet.demoRecipe.length,
+              itemCount: RecipeModeldrink.demoRecipe.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                     padding: const EdgeInsets.symmetric(
@@ -44,12 +44,12 @@ class NewRecipesweet extends StatelessWidget {
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => RecipDetail(
-                            recipeModel: RecipeModelsweet.demoRecipe[index],
+                          builder: (context) => recip_detail(
+                            recipeModel: RecipeModeldrink.demoRecipe[index],
                           ),
                         ),
                       ),
-                      child: RecipeCard(RecipeModelsweet.demoRecipe[index]),
+                      child: recipe_card(RecipeModeldrink.demoRecipe[index]),
                     ));
               },
             ),
@@ -64,9 +64,9 @@ class NewRecipesweet extends StatelessWidget {
   }
 }
 
-class RecipeCard extends StatelessWidget {
-  final RecipeModelsweet recipeModel;
-  RecipeCard(
+class recipe_card extends StatelessWidget {
+  final RecipeModeldrink recipeModel;
+  recipe_card(
     @required this.recipeModel,
   );
   @override
