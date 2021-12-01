@@ -101,6 +101,7 @@ class recipe_card extends StatelessWidget {
                 onTap: () async {
                   var calore;
                   var i = recipeModel.calories;
+
                   var h = Uri.parse("$ip/calories/$check");
                   http.Response response1 = await http.get(h);
                   json_response = jsonDecode(response1.body);
