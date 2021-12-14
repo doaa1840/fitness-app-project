@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recep_and_ctego/new_recipe%20_lunch.dart';
+import 'package:onboarding_screen/recep_and_ctego/new_recipe_lunch.dart';
 import 'package:onboarding_screen/recep_and_ctego/new_recipe.dart';
-import 'package:onboarding_screen/recep_and_ctego/new_recipe_%20dinner.dart';
+import 'package:onboarding_screen/recep_and_ctego/new_recipe_dinner.dart';
 import 'package:onboarding_screen/recep_and_ctego/new_recipe_drink.dart';
 import 'package:onboarding_screen/recep_and_ctego/new_recipe_sweet.dart';
 
@@ -10,6 +10,14 @@ class home_cate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    DateTime now = DateTime.now();
+    new_day = now.year.toString() +
+        "/" +
+        now.month.toString() +
+        "/" +
+        now.day.toString() +
+        ":" +
+        now.hour.toString();
 
     return Scaffold(
       body: Stack(

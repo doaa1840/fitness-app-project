@@ -5,11 +5,10 @@ import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:onboarding_screen/login.dart';
 
-var ip = "http://192.168.1.77:8000";
+var ip = "http://172.20.144.1:8000";
 
 class Test extends StatefulWidget {
   //Test({Key? key}) : super(key: key);
-
   @override
   info createState() => info();
 }

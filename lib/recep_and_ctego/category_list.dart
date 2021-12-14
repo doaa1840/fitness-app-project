@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding_screen/recep_and_ctego/categores.dart';
-import 'package:onboarding_screen/recep_and_ctego/categoryList.dart';
+import 'package:onboarding_screen/recep_and_ctego/category_list.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 

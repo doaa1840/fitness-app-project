@@ -2,12 +2,18 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_screen/recep_and_ctego/recipe_model_dinner.dart';
-import 'package:onboarding_screen/recep_and_ctego/recipe_details_dinner.dart';
+import 'package:onboarding_screen/information.dart';
+import 'package:onboarding_screen/login.dart';
+import 'package:onboarding_screen/main_page.dart';
+import 'package:onboarding_screen/recep_and_ctego/recipe_model_lunch.dart';
+import 'package:onboarding_screen/recep_and_ctego/recipe_details_lunch.dart';
+import 'package:http/http.dart' as http;
+import 'recipe_model_lunch.dart';
+import 'dart:convert';
 
-import 'recipe_model_dinner.dart';
+var new_day;
 
-class new_recipedinner extends StatelessWidget {
+class new_recipe_lunch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +41,7 @@ class new_recipedinner extends StatelessWidget {
             ListView.builder(
               physics: ScrollPhysics(),
               shrinkWrap: true,
-              itemCount: RecipeModeldinner.demoRecipe.length,
+              itemCount: RecipeModellunch.demoRecipe.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                     padding: const EdgeInsets.symmetric(
@@ -45,11 +51,11 @@ class new_recipedinner extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => recip_detail(
-                            recipeModel: RecipeModeldinner.demoRecipe[index],
+                            recipeModel: RecipeModellunch.demoRecipe[index],
                           ),
                         ),
                       ),
-                      child: recipe_card(RecipeModeldinner.demoRecipe[index]),
+                      child: recipe_card(RecipeModellunch.demoRecipe[index]),
                     ));
               },
             ),
@@ -65,7 +71,10 @@ class new_recipedinner extends StatelessWidget {
 }
 
 class recipe_card extends StatelessWidget {
-  final RecipeModeldinner recipeModel;
+  var json_response = null;
+
+  var check_day;
+  final RecipeModellunch recipeModel;
   recipe_card(
     @required this.recipeModel,
   );
@@ -94,7 +103,60 @@ class recipe_card extends StatelessWidget {
               top: 20,
               right: 40,
               child: InkWell(
-                onTap: () {
+                onTap: () async {
+                  var calore;
+                  var i = recipeModel.calories;
+                  var m;
+                  var h = Uri.parse("$ip/calories/$check");
+                  http.Response response1 = await http.get(h);
+                  json_response = jsonDecode(response1.body);
+                  calore = json_response[0]["calories_taken"];
+                  if (calore == 0) {
+                    DateTime now = DateTime.now();
+                    new_day = now.year.toString() +
+                        "/" +
+                        now.month.toString() +
+                        "/" +
+                        now.day.toString() +
+                        ":" +
+                        now.hour.toString();
+                    m = i + calore;
+                    var z = Uri.parse("$ip/add/$check/$m");
+                    http.get(z);
+                  }
+                  if (calore != 0) {
+                    DateTime now = DateTime.now();
+                    check_day = now.year.toString() +
+                        "/" +
+                        now.month.toString() +
+                        "/" +
+                        now.day.toString() +
+                        ":" +
+                        now.hour.toString();
+
+                    if (check_day == new_day) {
+                      m = i + calore;
+                      var z = Uri.parse("$ip/add/$check/$m");
+                      http.get(z);
+                    } else {
+                      new_day = check_day;
+                      print(new_day);
+                      var q = 0;
+                      var z = Uri.parse("$ip/clear/$check/$q");
+                      http.get(z);
+                      var h = Uri.parse("$ip/calories/$check");
+                      http.Response response1 = await http.get(h);
+                      json_response = jsonDecode(response1.body);
+                      calore = json_response[0]["calories_taken"];
+                      m = i + calore;
+                      var s = Uri.parse("$ip/add/$check/$m");
+                      http.get(s);
+                    }
+                  }
+
+                  // var z = Uri.parse("$ip/add/$check/$m");
+                  // http.get(z);
+
                   setState(() {
                     saved = !saved;
                   });

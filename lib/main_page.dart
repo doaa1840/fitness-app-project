@@ -1,23 +1,42 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:onboarding_screen/information.dart';
 import 'package:onboarding_screen/login.dart';
+import 'package:onboarding_screen/page%20lite/home_pageli.dart';
+import 'package:onboarding_screen/page%20lose/home_pagelo.dart';
 import 'package:onboarding_screen/page/home_page.dart';
 import 'package:onboarding_screen/recep_and_ctego/Home_REC.dart';
 import 'package:onboarding_screen/scroll.dart';
 import 'package:onboarding_screen/signup.dart';
 import 'package:onboarding_screen/slide.dart';
+import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
+
+DateTime now = DateTime.now();
+
+var g = now.year.toString() +
+    "/" +
+    now.month.toString() +
+    "/" +
+    now.day.toString() +
+    ":" +
+    now.hour.toString() +
+    ":" +
+    now.minute.toString();
+
+//var x = g;
 
 class Profile extends StatelessWidget {
   var Name = check;
+  var json_response = null;
 
-  var date = DateTime.now();
-
-  DateTime dateToday = DateTime(
-    DateTime.now().year,
-    DateTime.now().month,
-    DateTime.now().day,
-    DateTime.now().hour + 2,
-    DateTime.now().minute,
-  );
+  // static DateTime now = DateTime.now();
+  // String g = now.year.toString() +
+  //     "/" +
+  //     now.month.toString() +
+  //     "/" +
+  //     now.day.toString();
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +135,7 @@ class Profile extends StatelessWidget {
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
-                    child: Text("$dateToday",
+                    child: Text("$g",
                         style: TextStyle(
                             fontSize: 15,
                             color: Colors.green,
@@ -143,10 +162,19 @@ class Profile extends StatelessWidget {
                           'lib/resources/mm.jpg',
                           height: 128,
                         ),
-                        Text(
-                          "Meal For Today",
-                          style: TextStyle(color: Colors.green),
-                        ),
+                        InkWell(
+                          onTap: () {
+                            // Navigator.push(
+                            //context,
+                            // MaterialPageRoute(
+                            //builder: (context) =>
+                            //new_recipedrink()));
+                          },
+                          child: Text(
+                            "Meal For Today",
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -164,10 +192,37 @@ class Profile extends StatelessWidget {
                           'lib/resources/tt.jpg',
                           height: 128,
                         ),
-                        Text(
-                          " Exercise For Today",
-                          style: TextStyle(color: Colors.green),
-                        ),
+                        InkWell(
+                          onTap: () async {
+                            var goal;
+                            var h = Uri.parse("$ip/goal/$check");
+                            http.Response response1 = await http.get(h);
+                            json_response = jsonDecode(response1.body);
+                            goal = json_response[0]["goal"];
+                            if (goal == "Bulking") {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage()));
+                            }
+                            if (goal == "lose") {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage1()));
+                            }
+                            if (goal == "maintain") {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage2()));
+                            }
+                          },
+                          child: Text(
+                            " Exercise For Today",
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -185,18 +240,33 @@ class Profile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Icon(
-              Icons.food_bank_sharp,
-              color: Colors.green,
+            InkWell(
+              onTap: () {
+                // Navigator.push(
+                //   context,
+                //MaterialPageRoute(
+                //builder: (context) =>
+                // new_recipedrink()));
+              },
+              child: Icon(
+                Icons.food_bank_sharp,
+                color: Colors.green,
+              ),
             ),
-            Icon(
-              Icons.notifications_none,
-              color: Colors.green,
+            InkWell(
+              onTap: () {},
+              child: Icon(
+                Icons.notifications_none,
+                color: Colors.green,
+              ),
             ),
-            Icon(
-              Icons.person,
-              color: Colors.green,
-            ),
+            InkWell(
+              onTap: () {},
+              child: Icon(
+                Icons.person,
+                color: Colors.green,
+              ),
+            )
           ],
         ),
       ),

@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:onboarding_screen/recep_and_ctego/categores.dart';
-import 'package:onboarding_screen/recep_and_ctego/categoryList.dart';
+import 'package:onboarding_screen/recep_and_ctego/category_list.dart';
 
 class categoryListPage extends StatelessWidget {
   List<category> categores = utils.getMockedcategores();

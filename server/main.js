@@ -52,6 +52,30 @@ app.get('/add/:check/:m',(req,res)=>{
          }
      });
 })
+// app.get('/add_meal/:check/:s',(req,res)=>{
+//     let sql=`SELECT  calories SET calories_taken='${req.params.m}' WHERE user_name='${req.params.check}'`;
+//      db.query(sql,(err,data)=>{
+//          if(err) {
+//              return res.status(404).json({error:err});
+//          }
+//          else{
+//              res.send()
+//             console.log("hi")
+//          }
+//      });
+// })
+app.get('/goal/:check',(req,res)=>{
+    let sql=`SELECT * FROM users WHERE user_name='${req.params.check}'`;   
+      db.query(sql,(err,data)=>{
+         if(err) {
+             return res.status(404).json({error:err});
+         }
+         else{
+             res.send(data)
+            console.log("goal")
+         }
+     });
+})
 app.get('/add_info/:check/:hight/:weight/:age/:gender/:activety/:goal/:bmr',(req,res)=>{
     let sql=`UPDATE users SET hight='${req.params.hight}',weight='${req.params.weight}',age='${req.params.age}',gender='${req.params.gender}',activaty='${req.params.activety}',goal='${req.params.goal}',bmr='${req.params.bmr}' WHERE user_name='${req.params.check}'`;
     // let sql=`U INTO users (hight,weight,age,gender,activaty,goal) VALUES ('${req.params.hight}','${req.params.weight}','${req.params.age}','${req.params.gender}','${req.params.activety}','${req.params.goal}')`;
@@ -62,6 +86,19 @@ app.get('/add_info/:check/:hight/:weight/:age/:gender/:activety/:goal/:bmr',(req
          else{
              res.send()
             console.log("hmmmm");
+         }
+     });
+})
+app.get('/clear/:check/:q',(req,res)=>{
+    let sql=`UPDATE calories SET calories_taken='${req.params.q}' WHERE user_name='${req.params.check}'`;
+    // let sql=`U INTO users (hight,weight,age,gender,activaty,goal) VALUES ('${req.params.hight}','${req.params.weight}','${req.params.age}','${req.params.gender}','${req.params.activety}','${req.params.goal}')`;
+     db.query(sql,(err,data)=>{
+         if(err) {
+             return res.status(404).json({error:err});
+         }
+         else{
+             res.send()
+            console.log("clear");
          }
      });
 })
